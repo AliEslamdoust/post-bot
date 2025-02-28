@@ -117,7 +117,11 @@ sudo systemctl start post-bot.service
 
 # Check the service status
 echo "Checking post-bot service status..."
-sudo systemctl status post-bot.service
+if sudo systemctl show post-bot.service | grep -q "ActiveState=active"; then
+    echo "post-bot service is active."
+else
+    echo "post-bot service is not active."
+fi
 
 echo "Telegraf Post Bot installation complete!"
 
