@@ -96,7 +96,7 @@ User=root
 WorkingDirectory=/root/post-bot
 ExecStart=/usr/bin/node index.js
 Restart=on-failure
-RestartSec=10
+RestartSec=5
 StandardOutput=journal
 StandardError=journal
 
