@@ -88,16 +88,17 @@ chown -R postbot:postbot "$INSTALL_DIR"
 echo "Creating systemd service file $SERVICE_FILE..."
 cat <<EOF | sudo tee "$SERVICE_FILE"
 [Unit]
-Description=Telegraf Post Bot
+Description=Telegram Post Bot
 After=network.target
 
 [Service]
-Type=simple
-User=postbot
-WorkingDirectory=$INSTALL_DIR
+User=root
+WorkingDirectory=/root/post-bot
 ExecStart=/usr/bin/node index.js
 Restart=on-failure
 RestartSec=10
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
