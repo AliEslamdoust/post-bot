@@ -2,7 +2,7 @@
 
 # Check if node is installed
 if ! command -v node &> /dev/null; then
-    echo "Node.js could not be found. Installing Node.js..."
+   echo "Node.js could not be found. Installing Node.js..."
     # Install nvm (Node Version Manager)
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
@@ -28,8 +28,8 @@ INSTALL_DIR="/root/post-bot"
 
 # Check if git is installed
 if ! command -v git &> /dev/null; then
-  echo "git could not be found. Installing git..."
-  apt-get update && apt-get install -y git
+ echo "git could not be found. Installing git..."
+ apt-get update && apt-get install -y git
 fi
 
 # Create the installation directory if it doesn't exist
@@ -37,23 +37,23 @@ mkdir -p "$INSTALL_DIR"
 
 # Clone the repository using git
 if git clone "$REPO_URL" "$INSTALL_DIR"; then
-  echo "GitHub project cloned successfully to $INSTALL_DIR"
+ echo "GitHub project cloned successfully to $INSTALL_DIR"
 
-  # Navigate to the project directory
-  cd "$INSTALL_DIR"
+ # Navigate to the project directory
+ cd "$INSTALL_DIR"
 
-  # Install dependencies (if any)
-  if [ -f "package.json" ]; then
-    echo "Installing dependencies..."
-    npm install
-  else
-    echo "No package.json found. Skipping dependency installation."
-  fi
-
-  echo "Installation complete!"
+ # Install dependencies (if any)
+if [ -f "package.json" ]; then
+    echo "Installing dependencies..."
+    npm install
 else
-  echo "Failed to clone GitHub project."
-  exit 1
+    echo "No package.json found. Skipping dependency installation."
+fi
+
+ echo "Installation complete!"
+else
+ echo "Failed to clone GitHub project."
+ exit 1
 fi
 
 exit 0
@@ -63,8 +63,8 @@ SERVICE_FILE="/etc/systemd/system/post-bot.service"
 
 # Create a dedicated user for the bot
 if ! id -u postbot &> /dev/null; then
-  echo "Creating dedicated user 'postbot'..."
-  adduser --system postbot
+ echo "Creating dedicated user 'postbot'..."
+ adduser --system postbot
 fi
 
 # Change ownership of the project directory

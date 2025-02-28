@@ -27,13 +27,11 @@ A versatile and feature-rich Telegram bot designed for seamless content manageme
 
 ## Installation
 
-To get started with Telegraf Post Bot, follow these steps:
-
-1. Clone this repository to your local machine or server.
-2. Run the installation script:
+To get started with Telegraf Post Bot, just run the installation script:
 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/AliEslamdoust/post-bot/refs/heads/main/install.sh)
+```
 
 # Telegraf Post Bot (Example README)
 
