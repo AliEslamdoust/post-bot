@@ -21,7 +21,7 @@ fi
 
 
 # Set the project's GitHub repository URL
-REPO_URL="https://github.com/AliEslamdoust/rahe-shab.git"
+REPO_URL="https://github.com/AliEslamdoust/post-bot.git"
 
 # Set the installation directory
 INSTALL_DIR="/root/post-bot"
