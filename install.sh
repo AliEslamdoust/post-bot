@@ -56,8 +56,6 @@ else
  exit 1
 fi
 
-exit 0
-
 # Set the service file path
 SERVICE_FILE="/etc/systemd/system/post-bot.service"
 
@@ -107,3 +105,5 @@ echo "Checking post-bot service status..."
 sudo systemctl status post-bot.service
 
 echo "Telegraf Post Bot installation complete!"
+
+exit 0
