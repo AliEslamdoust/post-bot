@@ -1,22 +1,27 @@
 #!/bin/bash
 
-# Install nvm (Node Version Manager)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+# Check if node is installed
+if ! command -v node &> /dev/null; then
+    echo "Node.js could not be found. Installing Node.js..."
+    # Install nvm (Node Version Manager)
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
-# Load nvm (important to do after installation)
-. "$HOME/.nvm/nvm.sh"
+    # Load nvm (important to do after installation)
+    . "$HOME/.nvm/nvm.sh"
 
-# Load nvm bash completion (optional for tab completion)
-[ -s "$HOME/.nvm/bash_completion" ] && \. "$HOME/.nvm/bash_completion"
+    # Load nvm bash completion (optional for tab completion)
+    [ -s "$HOME/.nvm/bash_completion" ] && \. "$HOME/.nvm/bash_completion"
 
-# Install latest stable Node.js version
-nvm install --lts
+    # Install latest stable Node.js version
+    nvm install --lts
 
-# Use the latest stable Node.js version
-nvm use --lts
+    # Use the latest stable Node.js version
+    nvm use --lts
+fi
+
 
 # Set the project's GitHub repository URL
-REPO_URL="i will add the url after i commited to github"
+REPO_URL="https://github.com/AliEslamdoust/rahe-shab.git"
 
 # Set the installation directory
 INSTALL_DIR="/root/post-bot"
@@ -24,9 +29,7 @@ INSTALL_DIR="/root/post-bot"
 # Check if git is installed
 if ! command -v git &> /dev/null; then
   echo "git could not be found. Installing git..."
-  apt-get update && apt-get install -y git # For Debian/Ubuntu
-  # yum install -y git # For CentOS/RHEL
-  # dnf install -y git # For Fedora
+  apt-get update && apt-get install -y git
 fi
 
 # Create the installation directory if it doesn't exist
@@ -57,14 +60,6 @@ exit 0
 
 # Set the service file path
 SERVICE_FILE="/etc/systemd/system/post-bot.service"
-
-# Check if node is installed
-if ! command -v node &> /dev/null; then
-  echo "Node.js could not be found. Installing Node.js..."
-  apt-get update && apt-get install -y nodejs npm # For Debian/Ubuntu
-  # yum install -y nodejs npm # For CentOS/RHEL
-  # dnf install -y nodejs npm # For Fedora
-fi
 
 # Create a dedicated user for the bot
 if ! id -u postbot &> /dev/null; then
