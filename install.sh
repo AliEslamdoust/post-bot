@@ -56,6 +56,21 @@ else
  exit 1
 fi
 
+# Update package lists
+sudo apt update
+
+# Install ffmpeg
+sudo apt install -y ffmpeg
+
+# Verify installation
+if command -v ffmpeg &> /dev/null; then
+  echo "ffmpeg installed successfully."
+  ffmpeg -version
+else
+  echo "ffmpeg installation failed."
+  exit 1
+fi
+
 # Set the service file path
 SERVICE_FILE="/etc/systemd/system/post-bot.service"
 
