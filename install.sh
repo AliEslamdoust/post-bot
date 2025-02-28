@@ -35,6 +35,21 @@ fi
 # Create the installation directory if it doesn't exist
 mkdir -p "$INSTALL_DIR"
 
+# Update package lists
+sudo apt update
+
+# Install ffmpeg
+sudo apt install -y ffmpeg
+
+# Verify installation
+if command -v ffmpeg &> /dev/null; then
+  echo "ffmpeg installed successfully."
+  ffmpeg -version
+else
+  echo "ffmpeg installation failed."
+  exit 1
+fi
+
 # Clone the repository using git
 if git clone "$REPO_URL" "$INSTALL_DIR"; then
  echo "GitHub project cloned successfully to $INSTALL_DIR"
@@ -54,21 +69,6 @@ fi
 else
  echo "Failed to clone GitHub project."
  exit 1
-fi
-
-# Update package lists
-sudo apt update
-
-# Install ffmpeg
-sudo apt install -y ffmpeg
-
-# Verify installation
-if command -v ffmpeg &> /dev/null; then
-  echo "ffmpeg installed successfully."
-  ffmpeg -version
-else
-  echo "ffmpeg installation failed."
-  exit 1
 fi
 
 # Set the service file path
