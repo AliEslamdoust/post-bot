@@ -33,8 +33,6 @@ To get started with Telegraf Post Bot, just run the installation script:
 bash <(curl -s https://raw.githubusercontent.com/AliEslamdoust/post-bot/refs/heads/main/install.sh)
 ```
 
-# Telegraf Post Bot
-
 ## Configuration
 
 To configure the bot, edit the `.env` file with your custom settings. Ensure you enter your Telegram bot token, channel numeric IDs, and owners numeric ID to your local `.env` file.
