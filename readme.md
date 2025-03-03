@@ -58,20 +58,6 @@ Make sure to configure the bot's settings correctly by setting up the `.env` fil
 * `/start`: Start the bot and view available commands.
 * `/help`: Get a list of available commands and instructions.
 
-## Updates
-
-**Version 0.3.0:**
-
-* Implemented Winston as the logger for cleaner and more structured log files.
-
-**Version 0.2.1:**
-
-* Debugging fixes.
-
-**Version 0.2:**
-
-* Added the ability to toggle watermarking on or off.
-
 ## Contributing
 
 If you have any ideas, suggestions, or want to contribute to the project, feel free to fork the repository and submit a pull request. Contributions are welcome!
