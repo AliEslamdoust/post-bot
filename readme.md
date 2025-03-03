@@ -33,7 +33,7 @@ To get started with Telegraf Post Bot, just run the installation script:
 bash <(curl -s https://raw.githubusercontent.com/AliEslamdoust/post-bot/refs/heads/main/install.sh)
 ```
 
-# Telegraf Post Bot (Example README)
+# Telegraf Post Bot
 
 ## Configuration
 
@@ -49,7 +49,7 @@ To learn more about the bot's creator, simply type `/creator` in the bot.
 
 ### Editing the `.env` file
 
-Make sure to configure the bot's settings correctly by editing the `.env` file. This includes adding your bot token and setting up channel IDs, among other configurations.
+Make sure to configure the bot's settings correctly by setting up the `.env` file as was shown in `.env.example`. This includes adding your bot token and setting up channels ID, among other configurations.
 
 ### Example Commands
 
@@ -57,6 +57,20 @@ Make sure to configure the bot's settings correctly by editing the `.env` file. 
 * `/getnumericid`: Get the numeric ID of your Telegram channel (forward a message from the channel).
 * `/start`: Start the bot and view available commands.
 * `/help`: Get a list of available commands and instructions.
+
+## Updates
+
+**Version 0.3.0:**
+
+* Implemented Winston as the logger for cleaner and more structured log files.
+
+**Version 0.2.1:**
+
+* Debugging fixes.
+
+**Version 0.2:**
+
+* Added the ability to toggle watermarking on or off.
 
 ## Contributing
 

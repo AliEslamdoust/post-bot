@@ -1,4 +1,4 @@
 // Copyright (c) 2025 Ali Eslamdoust
 // MIT License
 
-const moment=require("jalali-moment"),fs=require("fs"),path=require("path");function log_handler(e,r){try{fs.appendFile(path.join(__dirname,"./log.txt"),`${getJalaliDate()} - ${r}: ${e}\n`,(e=>{e&&console.error("Error writing to log file:",e)}))}catch(e){console.error("Error in log_handler:",e)}}function getJalaliDate(){return moment().locale("fa").format("YYYY/MM/DD HH:mm:ss")}module.exports={log_handler:log_handler};
+const winston=require("winston"),mainFormat=winston.format.printf((({level:n,message:o,timestamp:t,...e})=>`${t} ${n}: ${o} ${JSON.stringify(e)}`)),logger=winston.createLogger({level:"info",format:winston.format.combine(winston.format.timestamp(),mainFormat),transports:[new winston.transports.Console,new winston.transports.File({filename:"./combined.log"})]});module.exports={logger:logger};

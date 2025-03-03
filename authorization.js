@@ -1,4 +1,4 @@
 // Copyright (c) 2025 Ali Eslamdoust
 // MIT License
 
-const log=require("./log");async function checkAdminStatus(t,e){try{const a=await t.telegram.getChatMember(e,t.botInfo.id);return"administrator"===a.status||"creator"===a.status}catch(t){return log.log_handler(t,"ERROR"),!1}}module.exports={checkAdminStatus:checkAdminStatus};
+const{logger:logger}=require("./log");async function checkAdminStatus(t,r){try{const e=await t.telegram.getChatMember(r,t.botInfo.id);return"administrator"===e.status||"creator"===e.status}catch(t){return logger.error("Error in receving channel members: "+t),!1}}module.exports={checkAdminStatus:checkAdminStatus};

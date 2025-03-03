@@ -1,9 +1,0 @@
-1403/12/11 02:20:14 - INFO: Directory './db' created successfully (or already existed).
-1403/12/11 02:20:14 - INFO: Created new database
-1403/12/11 02:20:14 - INFO: Config table created
-1403/12/11 02:20:14 - INFO: Posts table created
-1403/12/11 02:20:14 - INFO: Users table created
-1403/12/11 02:20:14 - INFO: Added new config to database: signature
-1403/12/11 02:20:14 - INFO: Added new config to database: isSign
-1403/12/11 02:20:14 - INFO: Added new config to database: isWatermark
-1403/12/11 02:20:14 - INFO: Added new config to database: writerSign
